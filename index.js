@@ -121,7 +121,7 @@ app.get('/batman', (request, response) => {
 })
 
 
-// Return Batman as JSON.
+// Return Spiderman as JSON.
 var spiderMan = {
 	"firstName":"Peter",
 	"lastName":"Parker",
@@ -151,6 +151,34 @@ app.get('/spiderman', (request, response) => {
 	console.log('Calling "/batman" on the Node.js server.')
 	response.type('application/json')
 	response.send(JSON.stringify(spiderMan, null, 4))
+})
+
+// Return personal json
+var megan = {
+	"firstName":"Megan",
+	"lastName":"Vesta",
+	"email":"meganevesta@lewisu.edu",
+	"city":"Plainfield",
+	"state":"IL",
+	"zip":"60585",
+	"favoriteHobby":"Watching St. Louis Cardinals baseball",
+	"class":"cpsc-24500-001",
+	"room":"AS-104-A",
+	"startTime":"2 PM CT",
+	"seatNumber":"1",
+	"inPerson":[
+		"Monday",
+		"Wednesday"
+	],
+	"virtual":[
+		"Friday"
+	]
+}
+
+app.get('/personal', (request, response) => {
+	console.log('Calling "/batman" on the Node.js server.')
+	response.type('application/json')
+	response.send(JSON.stringify(megan, null, 4))
 })
 
 
